@@ -9,6 +9,10 @@ $app->get('/', function (Request $request, Response $response, $args) {
 
 $app->get('/foo', function (Request $request, Response $response, $args) {
     $myService = $this->get('template');
-    echo 'hola';
+    //echo var_dump($myService);
+    $myService->setFileExtension(null);
+    echo $myService->render('components/index.php');
     return $response;
 });
+
+//$app->get('/hola','App\Controllers\HolaController:index');

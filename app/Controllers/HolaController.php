@@ -1,6 +1,6 @@
 <?php
 // File: /app/Controllers/HolaController.php
-namespace MiWeb\Controllers;
+namespace App\Controllers;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -32,8 +32,8 @@ class HolaController extends BaseController
     public function index(Request $request, Response $response, $args): string
     {
         // Ejemplo de uso del array $args. El contenido de este array estará
-        // disponible en la plantilla en el array $data.
-        $nombre = $args['nombre'] ?? 'mundo';
+        // disponible en la plantilla en el array $data. 
+        //$nombre = $args['nombre'] ?? 'mundo';
         return $this->view->render('hola/index', [
             'nombre' => $nombre
         ]);

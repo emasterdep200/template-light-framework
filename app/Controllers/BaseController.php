@@ -1,6 +1,6 @@
 <?php
-// File: /app/Controllers/BaseController.php
-namespace MiWeb\Controllers;
+
+namespace App\Controllers;
 /**
 * Controlador base del que deben heredar todos los controladores de la
 * aplicación. De esta manera, se asegura que los controladores tengan acceso a
@@ -18,7 +18,7 @@ class BaseController
     * @param $container \Pimple\Container Contenedor de la aplicación
     */
     public function __construct($container)
-    {
+    { 
         $this->view = $container->get('templates');
     }
 }
