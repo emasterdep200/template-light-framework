@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Controllers;
+
+use Psr\Container\ContainerInterface;
+
 /**
 * Controlador base del que deben heredar todos los controladores de la
 * aplicación. De esta manera, se asegura que los controladores tengan acceso a
@@ -9,7 +12,7 @@ namespace App\Controllers;
 class BaseController
 {
     /** @var \League\Plates\Engine Acceso al motor de plantillas */
-    protected $view;
+    protected $container;
     /**
     * Usando inyección de dependencia se le pasa al constructor
     * el contenedor de la aplicación. Así se dispone de las
@@ -17,8 +20,8 @@ class BaseController
     *
     * @param $container \Pimple\Container Contenedor de la aplicación
     */
-    public function __construct($container)
+    public function __construct(ContainerInterface $container)
     { 
-        $this->view = $container->get('templates');
+        $this->container = $container;
     }
 }

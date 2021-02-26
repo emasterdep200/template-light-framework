@@ -15,4 +15,4 @@ $app->get('/foo', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-//$app->get('/hola','App\Controllers\HolaController:index');
+$app->get('/hola','App\Controllers\HolaController:index');
